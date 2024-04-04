@@ -145,6 +145,7 @@ class BayesClassifier:
         # individual feature
         num_pos_words = sum(self.pos_freqs.values())
         num_neg_words = sum(self.neg_freqs.values())
+
         print (num_pos_words)
         print (num_neg_words)
 
@@ -296,8 +297,8 @@ if __name__ == "__main__":
     # # uncomment the below lines once you've implemented `classify`
     print("\nThe following should all be positive.")
     print(b.classify('I love computer science'))
-    # print(b.classify('this movie is fantastic'))
-    # print("\nThe following should all be negative.")
-    # print(b.classify('rainy days are the worst'))
-    # print(b.classify('computer science is terrible'))
+    print(b.classify('this movie is fantastic'))
+    print("\nThe following should all be negative.")
+    print(b.classify('rainy days are the worst'))
+    print(b.classify('computer science is terrible'))
     pass
