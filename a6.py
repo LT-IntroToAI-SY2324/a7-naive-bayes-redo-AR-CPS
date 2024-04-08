@@ -162,12 +162,12 @@ class BayesClassifier:
         pos_prob += math.log (num_pos_appearances / num_pos_words)
         num_neg_appearances = 1
         if word in self.neg_freqs:
-            num_neg_appearances
+            num_neg_appearances += self.neg_freqs[word]
         #print (num_neg_appearances)
-
         neg_prob += math.log (num_neg_appearances / num_neg_words)
         # for debugging purposes, it may help to print the overall positive and negative
         # probabilities
+       
         print(f"Positive Probability: {pos_prob}")
         print(f"Negative Probability: {neg_prob}")
         
@@ -315,5 +315,8 @@ if __name__ == "__main__":
     print(b.classify('this movie is fantastic'))
     print("\nThe following should all be negative.")
     print(b.classify('rainy days are the worst'))
-    print(b.classify('computer science is terrible'))
-    pass
+    print(b.classify('computer science is terrible'))  
+    print("\nThe following is to test out the method with each groups responses")
+    print(b.classify('I love you'))  
+    print(b.classify('I hate you'))
+    print(b.classify('you are stupid'))  
